@@ -198,3 +198,20 @@
 
 
 
+
+(global-set-key (kbd "<C-up>") 'shrink-window)
+(global-set-key (kbd "<C-down>") 'enlarge-window)
+(global-set-key (kbd "<C-left>") 'shrink-window-horizontally)
+(global-set-key (kbd "<C-right>") 'enlarge-window-horizontally)
+
+;; open *help* in current frame for `one-buffer-one-frame-mode'
+(setq obof-other-frame-regexps (remove "\\*Help\\*" obof-other-frame-regexps))
+(add-to-list 'obof-same-frame-regexps "\\*Help\\*")
+(add-to-list 'obof-same-frame-switching-regexps "\\*Help\\*")
+(setq special-display-regexps (remove "[ ]?\\*[hH]elp.*" special-display-regexps))
+
+
+;disable toolbar
+(tool-bar-mode 0)
+(tabbar-mode 0)
+(emulate-mac-spanish-keyboard-mode 1)
