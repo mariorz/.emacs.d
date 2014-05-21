@@ -24,7 +24,6 @@
             (save-buffers-kill-emacs))))))
 
 
-
 (setq mac-function-modifier 'meta)
 ;;(setq mac-option-modifier 'meta)
 
@@ -185,7 +184,7 @@
     "/Applications/mit-scheme.app/Contents/Resources/mit-scheme")
 (require 'xscheme)
 (require 'scheme-complete)
-;(require 'quack)
+(require 'quack)
 
 (require 'geiser)
 (setq geiser-racket-binary "/Applications/racket/bin/racket")
@@ -215,3 +214,21 @@
 (tool-bar-mode 0)
 (tabbar-mode 0)
 (emulate-mac-spanish-keyboard-mode 1)
+
+
+;(add-to-list 'load-path "~/.emacs.d/emacs-powerline")
+;(require 'powerline)
+
+;(require 'cl)
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[gj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+
+
+(setq web-mode-engines-alist
+      '(("jinja2"    . "\\.html\\'"))
+)
